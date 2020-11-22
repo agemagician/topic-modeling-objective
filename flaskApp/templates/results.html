@@ -45,6 +45,25 @@
 
     {% endif %}
 
+    <p align="center">
+    <b>
+    Selected Configurations: Base Algorithm: {{algorithm.base}} |
+
+                {% if algorithm.embedding == 'bert-sent'%}
+                    Embedding: BERT |
+                {% elif algorithm.embedding == 'roberta-sent'%}
+                    Embedding: ROBERTA |
+                {% else %}
+        Embedding: None|
+                {% endif %}
+
+
+
+
+    Number of cluster: {{algorithm.k}} |
+    N-gram: {{algorithm.n_gram}}
+    </b>
+</p>
 
         <table>
 
