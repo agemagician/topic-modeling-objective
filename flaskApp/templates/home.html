@@ -18,37 +18,75 @@
 </h1>
 Here you can find some information about how this platform works.
 
-    The framework includes 3 tabs
+    The framework includes 3 tabs whose purposes are defined below.
 
-    <div > <h2> Home</h2> This tab provides information about navigating through the framework. </div>
+    <div > <h2> Home</h2>
+        This tab provides information about navigating through the framework and an overview of available functionalities</div>
 
     <div>
     <h2> Employee Analytic </h2>
-        <p> In order to use this tab, the results should be precomputed through <b> Precompute Data </b>tab.
-        <p> This tab allows to select a visualization, Model, and other parameters such as Number of Clusters and N-gram. Below is a small description:</p>
+        <p> This tab provides the option select a visualization, Model, and other parameters such as Number of Clusters and N-gram.</p>
     <p>
-            <b>1) Employee Cluster:</b> This is your assumption. If you had objective of employees from 4 departments, you would assume
-            that the employee cluster is 4. You can also try different options to see which gives the best results. </p>
+            <b>1) Employee Cluster:</b>
+
+        <dl>
+        <dt>This paramter defines the number of groups in which the employees should be clustered. This can your assumption and a good value can be found through trial and error.</dt>
+        <dt><br></dt>
+        <dt>For example, if the data contained objective of employees from 4 departments, it might be a good idea to set cluster value to 4.</dt>
+        <dt><br></dt>
+        <dt>It is recommended to try different options to see which one gives best results.</dt>
+        <dt><br></dt>
+        <dt>To use this tab, the results should be precomputed through <b> Precompute Data </b>tab.  However, For the ease of user, some initial results have been precompute </dt>
+
+
+        </dl>
+         </p>
+
 
             <p>
-            <b>2) N-grams:</b> When picking topic words for each cluster, this parameter lets you decide the n-gram for the words
-            N-gram = 1 would give you words such as "Talent" , "acquisition"
-            whereas N-gram = 2 would give you words like "Talent-Acquisition"
+            <b>2) N-grams:</b>
+                <dl>
+             <dt>When picking topic words for each cluster, this parameter lets you decide the n-gram for the words.</dt>
+        <dt><br></dt>
+        <dt>            N-gram = 1 would give you words such as "Talent" , "acquisition"; whereas N-gram = 2 would give you words like "Talent-Acquisition".
+</dt>
+
+        </dl>
             </p>
 
             <p>
-                <b>3) Model: </b> Offers different choice of models to use for clustering the employees
+                <b>3) Model: </b>
+                <dl>
+        <dt>Offers different choice and also the combinations of models to use for clustering the employees.</dt>
+    </dl>
+
             </p>
             <p>
-                <b>4) Visualizations: </b> Various types of visualizations are available. More information related to each visualization is availble when results are displayed.
+                <b>4) Visualizations: </b>
+
+        <dl>
+    <dt>Various types of visualizations are available. Visualization descripted is displayed along with each analytic.</dt>
+    </dl>
             </p>
-    <p> <b>NOTE: you would only be able to see the options that have been precompute before hand. </b></p>
+    <p> <b>NOTE: Only the precomputed results can be seen on this tab. </b></p>
     </div>
-    <div><h2> Precompute Data:</h2> Since running the algorithm can take some time, there is a separate tab which allows you to
-        train all models and precompute the results beforehand for faster loading when doing analytics.
-    <p>
-        In this tab, you can upload a file (csv or excel) with new data. The data file must contains the following columns <b>'User ID (anonymus)', 'Objective_Name', 'Objective_Metric' </b>.</p>
-        <p>You can also set the configurations for precompute.</p>
+    <div><h2> Precompute Data</h2>
+
+        <dl>
+            <dt>        Since running the algorithm can take some time, there is a separate tab to train all models and precompute
+                the results beforehand for faster loading when doing analytics.
+            </dt>
+            <dt><br></dt>
+            <dt>A new data file (csv or excel) can be uploaded in this tab.</dt>
+            <dt><br></dt>
+            <dt>        The data file should contain the following columns <b>'User ID (anonymus)', 'Objective_Name', 'Objective_Metric' </b>.
+</dt>
+            <dt><br></dt>
+            <dt>        Configurations for which the results should to be precomputed can also be set there.
+</dt>
+        </dl>
+
+
 
     </div>
 </div>

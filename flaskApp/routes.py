@@ -42,6 +42,8 @@ def analytic():
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
+
+
     return render_template('upload.html', precompute_k=precompute_k, precompute_ngrams=precompute_ngrams)
 
 @app.route('/precompute', methods= ['GET', 'POST'])

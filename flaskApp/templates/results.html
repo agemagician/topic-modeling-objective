@@ -9,37 +9,43 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="home">
-<h4>
 
-    <p> Base Algorithm: {{algorithm.base}} </p>
-    <p> Embedding: {{algorithm.embedding}} </p>
-    <p> Number of cluster: {{algorithm.k}} </p>
-    <p> N-gram: {{algorithm.n_gram}} </p>
-
-</h4>
 
     {% if success %}
 
-    <h3>About the Visualization:</h3>
+
+        <p style="align=left; font-size: 1.6em; font-weight: 50; margin-top: 30px;"  >Visualization Description</p>
     {% if algorithm.visualization == 2%}
-    <h4> - Each image(wordcloud) represents a cluster of employees with similiar objective.</h4>
-    <h4> - The words in each wordcloud are the main topics discussed by the employees belonging to that cluster</h4>
+    <ul>
+        <li>Each image(wordcloud) represents a cluster of employees with similiar objective description.</li>
+        <li>The words in each wordcloud are the main topics discussed by the employees belonging to that cluster</li>
+    </ul>
 
     {% elif algorithm.visualization == 3%}
-    <h4>- This visualization gives an indepth analysis of the base model in terms of probabilities. </h4>
-    <h4>- It includes information such as the words and the probability of them belonging to a cluster.</h4>
+    <ul>
+        <li>This visualization gives an indepth analysis of LDA model in terms of probabilities. </li>
+        <li>It shows information such as the probability of each topic belonging to all clusters or the top words of a cluster and many other similiar informations.</li>
+    </ul>
+
     {% elif algorithm.visualization == 0%}
-    <h4>- In the visualization, the employees can be visualized in 2D space. </h4>
-    <h4> - Each dot in the graph represents an employee and by hover some basic information of the employee can be seen.</h4>
-    <h4> - The separate colors represent each cluster and on the top right, the topic words for each cluster can be seen</h4>
+    <ul>
+        <li>This graph shows the employees in a 2D space with respect to their objective descriptions.</li>
+        <li>Each dot in the graph represents an employee whose information can be seen by hovering on the circle.</li>
+        <li>Each color represent one cluster. The corresponding topic words for each cluster can be seen on the top right.</li>
+    </ul>
+
     {% else %}
-    <h4>- In the visualization, the employees can be visualized in 3D space. </h4>
-    <h4> - Each dot in the graph represents an employee and by hover some basic information of the employee can be seen.</h4>
-    <h4> - The separate colors represent each cluster and on the top right, the topic words for each cluster can be seen.</h4>
-    <h4> - It is also possible to rotate the space by left clicking the mouse and moving it and zooming into the space by using the small
-        wheel on the the mouse.</h4>
+    <ul>
+        <li>This graph shows the employees in a 3D space with respect to their objective descriptions.</li>
+        <li>Each dot in the graph represents an employee whose information can be seen by hovering on the circle</li>
+        <li>Each color represent one cluster. The corresponding topic words for each cluster can be seen on the top right.</li>
+        <li>It is also possible to rotate within the space by left clicking the mouse and moving it or zooming into the space by using the small
+        wheel on the the mouse.</li>
+    </ul>
+
     {% endif %}
-    <p>
+
+
         <table>
 
         {% for image_row in images %}
@@ -60,13 +66,13 @@
         {% endfor %}
         </table>
 
-    </p>
+
 
 
     {% for v in html %}
-    <br>
-    <iframe src="{{url_for('static', filename=v.path)}}" height="900" width="1300" align="center"/>
+    <iframe src="{{url_for('static', filename=v.path)}}" height="900" width="1300" align="center"> </iframe>
     {% endfor %}
+
 
     {% else %}
        <h1>ERROR: Either results have not been precomputed for this combination or some files are missing.</h1>

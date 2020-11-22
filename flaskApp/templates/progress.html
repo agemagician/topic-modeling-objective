@@ -24,6 +24,11 @@
 		}
 
 	}
+
+
+function stop_precompute() {
+  source.close();
+}
 	</script>
 </head>
 <br>
@@ -44,14 +49,14 @@
 	
 	<form  action="{{ url_for('upload') }}" method="POST">
     <p>
-    <input class="button" style="..." type="submit" value=" Cancel Precompute " id="cancel-precompute"/>
+    <input class="button" style="left: 20%;" type="submit" value=" Cancel Precompute " id="cancel-precompute" onclick="stop_precompute()"/>
 
            </p>
                    </form>
-	<h4> Please don't close this window untill the precompute is finished. Please Navigate back to Employee Analytic tab once it is completed. </h4>
-	<h4> It might take a while for it to get started as the system has to download the models first.</h4>
-	<h5> NOTE: If it fails to precompute data then, Please go back and select a smaller value of k. maybe the data doesn't have that many clusters in it. </h5> <h5>If error still persists, check the logs or contact anumafzaldogar@gmail.com </p>
-</h5>
+
+
+	<br>
+	<b> Please wait untill the precompute is complete and then navigate back to Employee Analytic tab. </b>
 
 
 	</div>

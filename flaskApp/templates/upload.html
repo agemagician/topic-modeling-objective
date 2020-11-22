@@ -11,7 +11,7 @@
 
 <div class="home">
 
-     <h1>Upload a file to precomputed the results.</h1>
+     <p style="align=left; font-size: 1.6em; font-weight: 50; margin-top: 30px;">Upload a file to precomputed the results.</p>
 
     <p>The file must have the following columns 'User ID (anonymus)','Objective_Name', 'Objective_Metric' </p>
     <h4>accepted formats: '.csv' | '.xlsx' </h4>
@@ -31,11 +31,11 @@
 
                 {{ k }}
 
-                 {% if k == 2%}
-                 <input type="checkbox" name="precompute_k" value="{{ k }}" id="{{ k }}" checked="checked"/>
-                   {% elif k == 3%}
+                 {% if k == 8%}
                  <input type="checkbox" name="precompute_k" value="{{ k }}" id="{{ k }}" checked="checked"/>
                    {% elif k == 4%}
+                 <input type="checkbox" name="precompute_k" value="{{ k }}" id="{{ k }}" checked="checked"/>
+                   {% elif k == 6%}
                  <input type="checkbox" name="precompute_k" value="{{ k }}" id="{{ k }}" checked="checked"/>
                 {% else %}
                  <input type="checkbox" name="precompute_k" value="{{ k }}" id="{{ k }}"/>
