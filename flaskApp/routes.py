@@ -188,8 +188,6 @@ def progress():
                                                                           dir=os.path.join(output_folder))
 
                                     elif vis_id == 3:
-                                        # save the LDA Object
-                                        TopicModelObject.basemodel.save(os.path.join(output_folder, 'lda.model'))
 
                                         id2word = corpora.Dictionary(token_lists)
                                         corpus = [id2word.doc2bow(text) for text in token_lists]
@@ -273,18 +271,11 @@ def result():
             algorithm['base'] = 'LDA'
             algorithm['embedding'] = None
 
-        # reading the data
-        data = pd.read_pickle(os.path.join(base_folder, 'flask' ,  processed_file))
-        sentences = list(data['sentences'])
-        token_lists = list(data['token_list'])
-        ids = list(data['id'])
-        sentences_titles = list(data['sentences_titles'])
-
         #construct path to the folder where all the precomputed results are stored,
 
         output_folder = os.path.join('flask', str(algorithm['visualization']), 'base_' + str(algorithm['base']),
-                                             'Embedding_' + str(algorithm ['embedding']), 'k_' + str(algorithm['k']),
-                                             'ngram_' + str(algorithm['n_gram']))
+                                     'Embedding_' + str(algorithm ['embedding']), 'k_' + str(algorithm['k']),
+                                     'ngram_' + str(algorithm['n_gram']))
 
     except:
         return render_template('results.html', algorithm=algorithm, images=[], success=False, viz=[])
