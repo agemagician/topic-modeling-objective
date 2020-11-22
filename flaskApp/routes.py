@@ -142,12 +142,15 @@ def progress():
                                     if not os.path.exists(output_folder):
                                         os.makedirs(output_folder)
 
+                                    print (output_folder)
                                     # Create a Topic Model Object
                                     TopicModelObject = Topic_Model(base=base, k=k, verbose=False,
                                                                    embedding=embedding,
                                                                    saved_embedding_dir=embedding_path,
                                                                    embedding_batch_size=100, use_AE=False,
                                                                    output_attention=False)
+                                    
+                                    
 
                                     # Fit the topic model
                                     TopicModelObject.fit(sentences, token_lists, vis_clusters=False)
