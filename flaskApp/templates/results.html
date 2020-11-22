@@ -89,7 +89,7 @@
 
 
     {% for v in html %}
-    <iframe src="{{url_for('static', filename=v.path)}}" height="900" width="1300" align="center"> </iframe>
+    <iframe src="{{url_for('static', filename=v.path)}}" height="900" width="100%" align="center"> </iframe>
     {% endfor %}
 
 
