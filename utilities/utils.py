@@ -143,7 +143,7 @@ def get_employee_text(sentences, ids):
         emp_index = employee_objective_indices[emp]
         employee_title = np_sentences[emp_index]
 
-        employee_titles[emp] = emp + ': ' + employee_title[0:150]
+        employee_titles[emp] = str(emp) + ': ' + employee_title[0:150]
     return employee_titles
 
 
