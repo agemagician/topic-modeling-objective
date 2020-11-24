@@ -240,7 +240,7 @@ def result():
             algorithm['base'] = None
             algorithm['embedding'] = 'roberta-sent'
 
-        elif model ==  'LDA Model' or model == None:
+        elif model ==  'LDA Model' or model == None: # it is disabled or LDA model is selected
             algorithm['base'] ='LDA'
             algorithm['embedding'] = None
 
@@ -248,7 +248,10 @@ def result():
         algorithm['k'] = int(request.form.get('selected_k'))
 
         # compute n-gram
-        algorithm['n_gram'] =int( request.form.get('selected_ngram'))
+        if request.form.get('selected_ngram') == None: #if it is disabled
+            algorithm['n_gram'] = 1
+        else: # get selected value
+            algorithm['n_gram'] =int( request.form.get('selected_ngram'))
 
         # compute visualization
         algorithm['visualization'] = visualizations[int(request.form.get('selected_vis'))]['i']
