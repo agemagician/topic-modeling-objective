@@ -11,6 +11,20 @@ function disable_algorithm_menu() {
   document.getElementById("selected_model").disabled=true;
 }
 
+function disable_ngram() {
+
+    if (document.getElementById("selected_model").value == 'LDA Model') {
+          document.getElementById("selected_ngram").disabled=true;
+    }
+    else
+    {
+          document.getElementById("selected_ngram").disabled=false;
+    }
+
+}
+
+
+
 </script>
 </head>
 <body>
@@ -64,7 +78,7 @@ function disable_algorithm_menu() {
           <th>
               <th>
             <h3>Models </h3>
-            <select id="selected_model" name="selected_model" class="selectpicker form-control">
+            <select id="selected_model" name="selected_model" class="selectpicker form-control" onchange="disable_ngram()">
               {% for model in models %}
               <option value="{{ model }}">{{ model }}</option>
               {% endfor %}
@@ -83,7 +97,7 @@ function disable_algorithm_menu() {
 
         <th>
             <h3>N grams </h3>
-            <select name="selected_ngram" class="selectpicker form-control">
+            <select id = "selected_ngram" name="selected_ngram" class="selectpicker form-control">
               {% for grams in n_grams %}
               <option value="{{ grams }}">{{ grams }}</option>
               {% endfor %}
@@ -94,13 +108,13 @@ function disable_algorithm_menu() {
         </table>
 
 </div>
-</div>
+
       <br>
 <div class="indent">
     <button type="submit" class="button" style="...">Generate Employee Clusters</button>
     </div>
 </form>
-
+</div>
 
 
 {% endblock %}
