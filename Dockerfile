@@ -20,7 +20,7 @@ RUN echo "source activate env" > ~/.bashrc
 ENV PATH /opt/conda/envs/nlp/bin:$PATH
 
 #Make port 80 available to the world outside this container
-ENV PORT 80
+ENV PORT 5000
 
 
 #define the enviroment variable

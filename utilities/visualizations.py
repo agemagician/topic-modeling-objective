@@ -34,7 +34,7 @@ def get_wordcloud(token_lists=None, topic=None, word_distribution=None, word_cou
 
         wordcloud = WordCloud(width=800, height=560,
                               background_color='white', collocations=False,
-                              min_font_size=10).generate(tokens)
+                              min_font_size=7).generate(tokens)
 
     else:
         return
